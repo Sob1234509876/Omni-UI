@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+}
+
+final var VERSION = '1.0a'
+group = 'top.sob.ui'
+version = VERSION
+
+repositories {
+    mavenCentral()
+    google()
+    mavenLocal()
+}
+
+dependencies {
+    testImplementation libs.junit.jupiter
+}
+
+test {
+    useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
+
+    publications {
+        maven(MavenPublication) {
+            groupId = 'top.sob'
+            artifactId = 'ui'
+            version = VERSION
+
+            from components.java
+        }
+    }
+}

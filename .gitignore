@@ -1,0 +1,6 @@
+# Ignore tempoary folders
+.gradle
+.idea
+
+# Ignore Gradle build output directory
+build
